@@ -774,42 +774,45 @@ function scrollToTop() {
     
     
   // Modal Functionality
-        const showModal = (iconText, message) => {
-            const modal = document.getElementById('popup-modal');
-            const modalIcon = document.getElementById('modal-icon');
-            const modalMessage = document.getElementById('modal-message');
+const showModal = (iconText, message, shouldRefresh = false) => {
+    const modal = document.getElementById('popup-modal');
+    const modalIcon = document.getElementById('modal-icon');
+    const modalMessage = document.getElementById('modal-message');
 
-            // Set icon and message
-            modalIcon.textContent = iconText;
-            modalMessage.textContent = message;
+    // Set icon and message
+    modalIcon.textContent = iconText;
+    modalMessage.textContent = message;
 
-            // Display the modal
-            modal.style.display = 'flex';
+    // Display the modal
+    modal.style.display = 'flex';
 
-            // Close the modal on button click
-            document.getElementById('close-modal').onclick = () => {
-                modal.style.display = 'none';
-            };
-        };
+    // Close the modal on button click
+    document.getElementById('close-modal').onclick = () => {
+        modal.style.display = 'none';
+        if (shouldRefresh) {
+            window.location.reload(); // Refresh the page
+        }
+    };
+};
 
-        // Form Submission Handling
-        document.getElementById("contact-form").addEventListener("submit", function (e) {
-            e.preventDefault();
-            fetch("https://script.google.com/macros/s/AKfycbx4tEMPrlLs-ExqRkqoCBe-TqizeBYlKfGSS7BnQbIf7hqXTokqfcqvRLQvpUTPWioVRg/exec", {
-                method: "POST",
-                body: new URLSearchParams(new FormData(this))
-            })
-                .then(response => {
-                    if (response.ok) {
-                        showModal('check_circle', 'Thank you for getting in touch! We will respond shortly.');
-                    } else {
-                        throw new Error("Submission failed");
-                    }
-                })
-                .catch(err => {
-                    showModal('cancel', 'Sorry, something went wrong. Please try again later.');
-                });
+// Form Submission Handling
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    fetch("https://script.google.com/macros/s/AKfycbx4tEMPrlLs-ExqRkqoCBe-TqizeBYlKfGSS7BnQbIf7hqXTokqfcqvRLQvpUTPWioVRg/exec", {
+        method: "POST",
+        body: new URLSearchParams(new FormData(this))
+    })
+        .then(response => {
+            if (response.ok) {
+                showModal('check_circle', 'Thank you for getting in touch! We will respond shortly.', true); // Pass true for page refresh
+            } else {
+                throw new Error("Submission failed");
+            }
+        })
+        .catch(err => {
+            showModal('cancel', 'Sorry, something went wrong. Please try again later.', false); // No page refresh
         });
+});
 
     
 </script>
