@@ -783,6 +783,11 @@ const showModal = (iconText, message, shouldRefresh = false) => {
     modalIcon.textContent = iconText;
     modalMessage.textContent = message;
 
+   // Remove existing classes and add appropriate class
+    modalIcon.classList.remove('success', 'error');
+    modalIcon.classList.add(iconText === 'check_circle' ? 'success' : 'error'); 
+    
+
     // Display the modal
     modal.style.display = 'flex';
 
