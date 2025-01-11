@@ -1,0 +1,1317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+@font-face {
+  font-family:poppins;
+  src: url("font/Poppins-Regular.ttf");
+}
+
+
+
+
+/* BASIC */
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    font-family:"poppins";
+    color:#333;
+   }
+
+img{
+    max-width: 100%;
+}
+
+p{
+    line-height: 1.5;
+  
+}
+
+
+.row{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.col{
+      flex: 1;
+      /* Grow columns equally */
+      min-width: 250px;
+      padding: 15px;
+      margin: 10px;
+ }
+
+/* BASIC */
+
+
+
+/* HEADER */
+
+header{
+    position: fixed;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:10px 5%;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+header.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+nav {
+     padding: 15px;
+    }
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding: 15px;
+    transition: color 0.3s;
+        }
+
+/* Active link styles */
+nav a.active {
+            color: #007bff; /* Highlight color for active link */
+        }
+
+nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; /* Gap between link and dot */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background-color: #007bff; /* Match active link color */
+            transition: width 0.3s ease, height 0.3s ease;
+}
+
+        /* Active dot */
+        nav a.active::after {
+            width: 6px;
+            height: 6px;
+        }
+
+ 
+/* HEADER */
+
+
+
+/* LOGO*/
+
+
+.logo {
+    width: 200px;
+    align-items: center;
+    padding-top:7px;
+    fill: none; /* Start with no fill */
+   
+}
+
+.logo path {
+    fill: none; /* Initially, no fill */
+    animation: fill-animation 2s ease-in-out forwards infinite;
+}
+
+/* Add delays for each letter */
+.logo path:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logo path:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.logo path:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.logo path:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Keyframes for path fill animation */
+@keyframes fill-animation {
+    0% {
+        fill: none; /* No fill at start */
+        opacity: 0.5; /* Slightly visible */
+    }
+    50% {
+        fill: rgba(0, 0, 0, 0.8); /* Transition to almost full opacity */
+    }
+    100% {
+        fill: #333; /* Fully filled */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* LOGO*/
+
+
+/* BTN1 AND BTN2 UNIVERSAL */
+
+
+.btn1{
+	background-color: #efefef;
+    color: #333;
+    padding: 12px 14px;
+	border-radius: 30px;
+    font-size: 16px;
+
+}
+.btn1:hover{
+    color:white;
+    background-color:#007bff;
+	
+}
+
+
+.btn2{
+    display:none;
+}
+
+
+#menu-icon{
+    display: none;
+}
+
+
+
+
+
+/* HERO SECTION STARTS */
+
+
+.hero{
+     padding-top: 80px;
+     padding-bottom:0px;
+}
+
+.hero .row{
+  align-items: center;
+}
+
+
+.hero h3{
+    font-weight: normal;
+}
+
+
+.hero .btn1 {
+    display: inline-block; /* Ensures margin behaves as expected */
+    margin-top: 1rem; /* Add space above the buttons */
+    margin-right: 0.5rem; /* Add space between the buttons */
+    padding:8px 13px;
+    
+}
+
+.hero .btn1:last-child {
+    margin-right: 0; /* Ensure no extra margin on the last button */
+}
+
+
+
+/* HERO SOCIAL MEDIA STARTS */
+
+/* Individual Social Icon Styling */
+.social-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40%; /* Circular shape */
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Default icon color */
+    font-size: 16px; /* Icon font size */
+    margin-top: 1.5rem; /* Add space to the right of each icon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+     
+}
+
+/* Hover Effect */
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    color: #007bff; /* Change icon color on hover */
+}
+
+
+
+
+/* HERO SLIDER TEXT "I'M" */
+
+.hero .text-slider-wrapper {
+            font-size: 32px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top:-20px;
+            margin-bottom:-10px;
+        }
+
+
+.hero p{
+    margin-bottom:-2px;
+}
+
+
+
+.hero .text-slider {
+            display: inline-block;
+            overflow: hidden;
+            height: 1.4em; /* Increased height to fit text */
+            line-height: 1.4em; /* Matches or slightly exceeds the text height */
+            
+        }
+
+        .hero .text-slider span {
+            display: block;
+            color:#007bff;
+            font-weight: 500;
+            animation: slide 9s ease-in-out infinite; /* Adjusted time for 3 items */
+        }
+
+        @keyframes slide {
+            0%, 25% {
+                transform: translateY(0);
+            }
+            33%, 58% {
+                transform: translateY(-1.4em); /* Adjusted to match height */
+            }
+            66%, 91% {
+                transform: translateY(-2.8em); /* Adjusted for second item */
+            }
+            100% {
+                transform: translateY(0); /* Reset to the starting position */
+            }
+        }
+
+/* HERO SECTION ENDS */
+
+
+
+.abouts hr{
+    border: none;
+    border-radius: 10px;
+    width:120px;
+    height:5px;
+    background-color: #007bff;
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
+.work hr{
+    border: none;
+    border-radius: 10px;
+    width:80px;
+    height:5px;
+    background-color: #007bff;
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
+
+
+.sectionse hr{
+    border: none;
+    border-radius: 10px;
+    width:120px;
+    height:5px;
+    background-color: #007bff;
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+.sectco hr{
+    border: none;
+    border-radius: 10px;
+    width:120px;
+    height:5px;
+    background-color: #007bff;
+    margin-top: -20px;
+    margin-bottom: 80px;
+}
+
+
+
+
+
+
+/* ABOUT SECTION STARTS */
+
+
+.abouts{
+    padding-top:40px;
+    padding-bottom:80px;
+    background-color: #FBFBFB;
+}
+
+
+
+
+/*ABOUT COL FLEX STARTS */
+
+.col-30 img{
+    width:250px;
+    margin-top: 15px;
+   
+  
+    
+}
+
+.col-30 {
+     
+      flex-basis: calc(30% - 20px);
+      border-radius: 10px;
+      padding: 20px;
+      background-color: rgba(128, 128, 128, 0.1);
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+      position: relative; /* Required for pseudo-elements */
+      overflow: hidden; /* Ensure the effect stays within the column */
+      
+    }
+    .col-70 {
+      flex-basis: calc(70% - 20px); 
+      border-radius: 10px;
+      padding: 20px;
+      padding-left: 35px;
+      padding-right: 35px;
+      background-color: rgba(128, 128, 128, 0.1);
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+      position: relative; /* Required for pseudo-elements */
+      overflow: hidden; /* Ensure the effect stays within the column */
+    }
+
+
+
+
+
+.col-50 {
+    flex-basis: calc(50% - 20px);
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom:40px;
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: rgba(128, 128, 128, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+    position: relative; /* Required for pseudo-elements */
+    overflow: hidden; /* Ensure the effect stays within the column */
+}
+
+
+
+
+/*ABOUT COL FLEX ANIMATION HOVER EFFECTS STARTS */
+
+/* Universal hover effect */
+.hover-effect {
+    background-color: rgba(128, 128, 128, 0.1); /* Default background */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+}
+
+.hover-effect:hover {
+    background-color: rgba(128, 128, 128, 0.2); /* Slightly darker on hover */
+    transform: translateX(5px); /* Small horizontal movement */
+}
+
+.hover-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start outside the element */
+    width: 200%;
+    height: 100%;
+    transform: skewX(-20deg); /* Skew for diagonal effect */
+    transition: left 0.3s ease-in-out; /* Smooth sliding */
+}
+
+.hover-effect:hover::before {
+    left: 100%; /* Slide across the element */
+}
+
+/*ABOUT COL FLEX ANIMATION HOVER EFFECTS ENDS */
+
+
+
+
+
+.abouts h1{
+    font-weight: 500;
+}
+
+
+.abouts h4{
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+
+.col-70 h3{
+    font-weight: 500;
+   
+}
+
+
+
+/* ABOUT SKILLS STARTS */
+
+.skill80{
+    height: 8px;
+    background-image: linear-gradient(90deg, #007bff 80%, #ffffff 20%);
+    border-radius:5px;
+}
+
+.skill50{
+    height: 8px;
+    background-image: linear-gradient(90deg, #007bff 50%, #ffffff 50%);
+    border-radius:5px;
+}
+
+.skill90{
+   height: 8px;
+   background-image: linear-gradient(90deg, #007bff 90%, #ffffff 10%); 
+   border-radius:5px;
+}
+
+.skill70{
+    height: 8px;
+    background-image: linear-gradient(90deg, #007bff 70%, #ffffff 30%); 
+    border-radius:5px;
+}
+
+/* ABOUT SKILLS ENDS */
+
+/* ABOUT SECTION ENDS */
+
+
+/* WORK SECTION STARTS */
+
+
+.work{
+     padding-top: 40px;
+     padding-bottom:80px;
+}
+
+.work h1{
+     font-weight: 500;
+}
+
+
+
+/* WORK FILTER BUTTONS */
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+      padding: 12px 15px;
+      margin: 0 5px;
+      border: none;
+      background-color: #efefef;
+      cursor: pointer;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    .filter-buttons button.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+/* WORK FILTER BUTTONS */
+
+
+
+/* WORK FILTER GALLERY */
+    .rowg {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+
+    .colg {
+      flex: 1 1 calc(33.333% - 30px);
+      max-width: calc(33.333% - 30px);
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+
+    .card {
+      position: relative;
+      background: #ffffff;
+  
+      border-radius: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+   
+    }
+
+
+     .card img {
+      width: 100%;
+      transition: transform 0.3s ease;
+      border-radius: 30px;
+    }
+
+
+     .card h3 {
+      font-weight: 500;
+      margin-top: 25px;
+      margin-left:10px;
+      margin-right:10px; 
+    }
+
+   
+
+   
+     .card:hover img {
+      transform: scale(1.1);
+    }
+
+/* WORK FILTER GALLERY */
+
+
+
+/* WORK FILTER GALLERY POPUP */
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.3s, opacity 0.3s;
+      z-index:1000;
+    }
+
+    .popup.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 20px;
+    }
+
+    .popup-close-btn {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      background: #444;
+      color:#fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .popup-close-btn:hover {
+      background-color: #007bff;
+    }
+
+
+/* WORK SECTION ENDS */
+
+
+
+
+/* SERVICES SECTION STARTS */
+
+    .sectionse {
+       padding-top: 40px;
+       padding-bottom:80px;
+       background-color: #fbfbfb;
+    }
+
+
+    .sectionse h1{
+     font-weight: 500;
+    }
+
+
+    /* Row styling for flexible layout */
+    .rowse {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px; /* Adding gap between cards */
+      padding: 0 15px; /* Padding for responsive column */
+    }
+
+    /* Column styling for individual card */
+    .colse {
+      padding: 15px; /* Padding inside columns */
+      box-sizing: border-box;
+    }
+
+    /* Card styles */
+    .cardse {
+      width: 100%;
+      padding: 2em 1.5em;
+      background: linear-gradient(#ffffff 50%, #e3e3e3 50%);
+      background-size: 100% 200%;
+      background-position: 0 2.5%;
+      border-radius: 30px;
+      border:1px solid #333;
+      cursor: pointer;
+      transition: 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Icon wrapper and styling */
+    .icon-wrapper {
+      background-color: #007bff;
+      font-size: 40px; /* Adjusted size for better visibility */
+      height: 70px;
+      width: 70px;
+      color: #333;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+      margin-bottom: 20px;
+    }
+
+    /* Hover effect for the cards */
+    .cardse:hover {
+      background-position: 0 100%;
+    }
+
+    .cardse:hover .icon-wrapper {
+      background-color: #007bff;
+
+    }
+
+    .pse {
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+    }
+
+    .iconsvg {
+      width: 40px;
+    }
+   
+
+/* SERVICES SECTION ENDS */
+
+
+/* CONTACTS SECTION STARTS */
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectco {
+    width: 100%;
+    max-width: 1080px;
+    padding-top: 40px;
+    padding-bottom:80px;
+    
+}
+
+.sectco h1{
+   font-weight: 500;
+  
+    
+}
+
+
+.rowco {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-left:25px;
+      margin-right:25px;
+}
+
+.contact-info {
+      width: 50%;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center; /* Ensures vertical alignment between icon and text */
+  margin-bottom: 30px;
+}
+
+.contact-info-icon {
+  height: 30px; /* Keeps a fixed height for the icon container */
+  width: 30px; /* Keeps a fixed width for the icon container */
+  text-align: center;
+  border: 1px solid #333;
+  border-radius: 50%; /* Makes the container circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevents the icon container from shrinking */
+  margin-right: 15px; /* Adds spacing between the icon and text */
+}
+
+.contact-info-icon i {
+  font-size: 16px; /* Adjust the font size for the icon */
+  color: #007bff; /* Icon color matching the theme */
+}
+
+.contact-info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically aligns the text content */
+}
+
+.contact-info-content h4 {
+   margin: 0 0 5px 0; /* Adds some space below the heading */
+}
+
+.contact-info-content p {
+  color: #666; /* Text color for the paragraph */
+  margin: 0; /* Removes extra margin around the paragraph */
+}
+
+/* Adjust only the address icon */
+.contact-info-item:first-child .contact-info-icon {
+  margin-top: -40px; /* Moves the icon further up */
+}
+
+.contact-form {
+      width: 45%;
+      padding: 15px;
+      padding-left:20px;
+      padding-right: 20px;
+      border: 1px solid #333;
+      border-radius: 20px;
+}
+
+.contact-form .input-box {
+      position: relative;
+      width: 100%;
+      margin-top: 20px;
+}
+
+.contact-form .input-box input,
+.contact-form .input-box textarea {
+      width: 100%;
+      padding: 12px 10px;
+      font-size: 16px;
+      margin: 10px 0;
+      border: none;
+      border-bottom: 1px solid #333;
+      outline: none;
+      resize: none;
+      background: transparent;
+}
+
+.contact-form .input-box span {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      font-size: 16px;
+      pointer-events: none;
+      transition: 0.2s ease-in-out;
+      color: #666;
+}
+
+.contact-form .input-box input:focus ~ span,
+.contact-form .input-box textarea:focus ~ span,
+.contact-form .input-box input:not(:placeholder-shown) ~ span,
+.contact-form .input-box textarea:not(:placeholder-shown) ~ span {
+      font-size: 12px;
+      transform: translateY(-20px);
+    }
+
+.contact-form .input-box .submit {
+    
+      color:white;
+      background-color:#007bff;
+      border: none;
+      cursor: pointer;
+      padding: 12px 12px;
+      font-size: 16px;
+      border-radius: 30px;
+      transition: 0.8s ease-in-out;
+}
+
+
+.contact-form .input-box .submit:hover{
+    background-color:#0056b3;
+} 
+
+/* CONTACTS SECTION ENDS */
+
+
+/* FOOTER STARTS */
+
+footer {
+      padding-top:20px;
+      padding-bottom: 40px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #f9f9f9;
+}
+
+.socialii a{
+   padding:10px; 
+}
+
+.sociali i {
+    width: 15px;
+    padding: 10px;
+    margin-bottom:5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Circular shape */
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    font-size: 14px;
+    color: #333; /* Default icon color */
+ }
+
+.sociali i:hover{
+    color: #007bff;
+}
+
+
+/* LOGO FOOTER */
+
+.logof {
+    width: 200px;
+    margin-bottom:0px;
+    fill: none; /* Start with no fill */
+}
+
+.logof path {
+    fill: none; /* Initially, no fill */
+    animation: fill-animation 2s ease-in-out forwards infinite;
+}
+
+/* Add delays for each letter */
+.logof path:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logof path:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.logof path:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.logof path:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Keyframes for path fill animation */
+@keyframes fill-animation {
+    0% {
+        fill: none; /* No fill at start */
+        opacity: 0.5; /* Slightly visible */
+    }
+    50% {
+        fill: rgba(0, 0, 0, 0.8); /* Transition to almost full opacity */
+    }
+    100% {
+        fill: #333; /* Fully filled */
+        opacity: 1; /* Fully visible */
+    }
+}
+ 
+   
+.fna {
+     margin-bottom:5px;
+     display:block;
+}
+
+.fna a {
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding: 15px;
+    transition: color 0.3s;
+}
+
+.pfo{
+    padding-top: 10px;
+    font-size:14px;
+}
+
+
+.pfo a{
+    color:#007bff;
+}
+
+   
+/* FOOTER ENDS */
+
+
+/* TOP BUTTON CODE */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 95px;
+    right: 22px;
+    display: none; /* Initially hidden */
+    background-color: #007bff; /* Changed background color to blue */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Square with slightly rounded corners */
+    width: 30px;
+    height: 30px;
+    font-size: 6px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 998;
+}
+
+.scroll-to-top .icon {
+    color: white;
+    font-size: 20px;
+}
+
+.scroll-to-top.show {
+    display: flex; /* Show the button */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-to-top.hide {
+    opacity: 0;
+    transform: translateY(100px);
+    pointer-events: none;
+}
+
+/* TOP BUTTON CODE ENDS */
+
+
+/* FORM POPUP */
+/* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 340px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 0 20px;
+        }
+
+       .modal-content .icon {
+           font-size: 55px;
+           margin-bottom: 10px;
+       }
+
+       .modal-content .icon.success {
+           color: #007bff; /* Blue for success */
+       }
+
+        .modal-content .icon.error {
+          color: #ff0000; /* Red for error */
+       }
+
+
+
+
+        .modal-content p {
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+
+
+  .ttext,.etext,.ntext {
+            font-family: "poppins"; /* Change to desired font */
+            font-size: 14px;
+         
+          }
+
+/* FORM POPUP */
+
+
+
+
+
+
+
+
+
+/* MOBILE SCREEN SECTION ARRANGE STARTS */
+
+@media screen and (max-width:896px) {
+     
+.hero .row {
+      margin-top: 20px !important;
+}
+   
+.btn1{
+      display:none;
+}
+    
+    
+.btn2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #333; /* WhatsApp green */
+  color: #fff;
+  width: 40px; /* Circle size: 16px + padding */
+  height: 40px;
+  font-size: 18px; /* Font size for icon */
+  border-radius: 50%; /* Makes it circular */
+  position: fixed; /* Fixed position */
+  bottom: 150px; /* Distance from bottom */
+  right: 20px; /* Distance from right */
+  z-index: 998; /* Ensure it's above other content */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Hover effect */
+.btn2:hover {
+  transform: scale(1.1); /* Slight zoom-in on hover */
+}
+
+
+/* Apply heartbeat animation */
+.btn2 {
+  animation: heartbeat-wave 1.5s infinite;
+}
+    
+    
+nav a{
+    display: block;
+    text-align: center;
+}
+    
+nav{
+        width: 100%;
+		position:absolute;
+		top:85px;
+		left:-100%;
+		background-color:#fff;
+		transition:1s;
+		min-height:10vh;
+        width:40%;
+        border:1px solid #333;
+        border-bottom-right-radius:5px;
+        border-top-right-radius:5px;
+		
+}
+    
+#menu-icon{
+        padding-right:10px;
+        display: block;
+		font-size:25px;
+		color:#333;
+}
+	
+.show-menu{
+		left:0px;
+}
+    }
+
+
+/* Heartbeat wave animation */
+@keyframes heartbeat-wave {
+  0%, 100% {
+    transform: scale(1);
+ }
+  50% {
+    transform: scale(1.1);
+  }  }
+
+/* Heartbeat wave animation */
+
+
+
+/* WORKS CARD MOBILE VIEW */
+
+@media screen and (max-width: 768px) {
+   .colg {
+    flex: 1 1 calc(50% - 30px); /* 2 columns */
+    max-width: calc(50% - 30px);
+  }
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .colg {
+    flex: 1 1 100%; /* 1 column */
+    max-width: 100%;
+    margin-left:25px;
+    margin-right:25px;
+  }
+    
+/*in hero mobile social icon*/
+.social-icon{
+    margin-right: 25px;
+}  
+    
+    
+ .hero .text-slider-wrapper {
+            font-size: 29px;
+    }
+    
+    
+    
+    
+}
+
+/* WORKS CARD MOBILE VIEW */  
+
+
+
+/* SERVICES MOBILE VIEW STARTS */
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+.rowse {
+        grid-template-columns: 1fr; /* 1 column per row on mobile */
+        gap: 15px;
+}
+
+.colse {
+        padding: 10px; /* Padding for columns in mobile view */
+    }
+    
+    
+    .abouts .row{
+      margin-left: 20px;
+      margin-right: 20px;
+        
+    }
+  
+    
+    .hero{
+     padding-top: 40px;
+     padding-bottom:0px;
+}
+    
+}
+
+/* SERVICES MOBILE VIEW STARTS */
+
+
+/* CONTACTS MOBILE VIEW */ 
+
+@media (max-width: 767px) {
+      .rowco {
+      flex-direction: column;
+}
+
+.contact-info {
+        margin-bottom: 40px;
+        width: 95%;
+}
+
+.contact-form {
+        width: 95%;
+    }
+    
+}
+
+
+
+
+/* CONTACTS MOBILE VIEW */ 
+
+
+
+/* MOBILE SCREEN SECTION ARRANGE OVER */
