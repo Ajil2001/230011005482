@@ -1266,6 +1266,13 @@ nav{
       margin-left: 20px;
       margin-right: 20px;
 }
+
+    .hero{
+     padding-top: 40px;
+     padding-bottom:0px;
+}
+
+	
 }
 
 /* SERVICES MOBILE VIEW STARTS */
